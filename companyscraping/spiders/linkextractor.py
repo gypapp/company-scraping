@@ -10,7 +10,7 @@ class LinkSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        extractor = LinkExtractor(allow_domains=self._get_domain(response.url))
+        extractor = LinkExtractor(allow_domains=self.allow_domains)
         for link in extractor.extract_links(response):
             yield {
                 'url': link.url,
