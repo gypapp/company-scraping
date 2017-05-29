@@ -1,3 +1,5 @@
+.idea
 .DS_Store
 companyscraping/__pycache__/
 companyscraping/spiders/__pycache__/
+companyscraping.iml
