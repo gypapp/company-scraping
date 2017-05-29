@@ -1,10 +1,10 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
-import tldextract
 
 
 class LinkSpider(scrapy.Spider):
     name = "link-extractor"
+    allow_domains = 'tiempodev.com'
     start_urls = [
         'http://www.tiempodev.com/index',
     ]
@@ -16,7 +16,3 @@ class LinkSpider(scrapy.Spider):
                 'url': link.url,
                 'text': link.text
             }
-
-    def _get_domain(self, url):
-        ext = tldextract.extract(url)
-        return ext.domain + '.' + ext.suffix
