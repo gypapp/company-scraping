@@ -42,11 +42,3 @@ class LinkSpider(Spider):
             'url': url,
             'text': text
         }
-
-    def _create_item(self, meta, url, text=''):
-        return {
-            'orb_num': meta['orb_num'],
-            'company': meta['name'],
-            'url': url,
-            'text': text
-        }
