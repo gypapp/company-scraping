@@ -2,7 +2,7 @@ import csv
 from scrapy import Spider, Request
 from pkg_resources import resource_filename
 
-COMPANY_FILE = "resources/fhai_company_urls.csv"
+COMPANY_FILE = "resources/testdataseedurls.csv"
 
 
 class RelCanonicalCheck(Spider):
