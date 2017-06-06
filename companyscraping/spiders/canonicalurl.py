@@ -21,6 +21,8 @@ class RelCanonicalCheck(Spider):
         return requests
 
     def parse(self, response):
+        item = {'companysite': response.url}
         canonical = response.xpath('//link[@rel="canonical"]/@href').extract_first()
-        yield {'companysite': response.url,
-                'canonical': canonical}
+        if canonical:
+            item.update({'canonical': canonical})
+        yield item
